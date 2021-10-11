@@ -1,0 +1,13 @@
+//i/span[@class='item-name'] - niedziała
+
+//i[contains(@class,'icon item-icon icon-wf-catbig01')]//span
+
+//div[contains(@categoryid, '12795')]//div
+
+//div[contains(@class,'wrapper')]//div
+
+[data-v-6fc862fc data-v-3042a9fa data-v-6e76cef4]
+
+//div/ul[@class='category']
+
+//div/img[@alt='Telewizory']
