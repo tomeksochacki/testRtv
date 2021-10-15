@@ -4,10 +4,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Testy {
@@ -22,7 +24,7 @@ public class Testy {
         this.webDriver.navigate().to("https://www.mediaexpert.pl/");
     }
 
-    @Test
+    /*@Test
     public void mediaExpertTest() {
         WebDriverWait wait = new WebDriverWait(webDriver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='spark-button is-primary is-default icon-left']")));
@@ -30,11 +32,11 @@ public class Testy {
         wait.until(ExpectedConditions.elementToBeClickable(By.linkText("TV, Audio i RTV")));
         this.webDriver.findElement(By.linkText("TV, Audio i RTV")).click();
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div/ul[@class='category']")));
-        /*wait.until(ExpectedConditions.elementToBeClickable(By.className("icon close-icon icon-close")));
+        *//*wait.until(ExpectedConditions.elementToBeClickable(By.className("icon close-icon icon-close")));
         this.webDriver.switchTo()
                 .frame(this.webDriver.findElement(By.className("icon close-icon icon-close")));
         this.webDriver.findElement(By.className("icon close-icon icon-close")).click();
-        this.webDriver.switchTo().defaultContent();*/
+        this.webDriver.switchTo().defaultContent();*//*
         this.webDriver.findElement(By.xpath("//div/img[@alt='Telewizory']")).click();
         try {
             wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("[class='offer-box']")));
@@ -47,15 +49,37 @@ public class Testy {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(".//span[contains(text(),  '30 produktów')]")));
         this.webDriver.findElement(By.xpath(".//span[contains(text(),  '30 produktów')]")).click();
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='sidebar']")));
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(".//div/a[@title='Telewizory LED - RODZAJ TELEWIZORA: LCD']")));
-        this.webDriver.findElement(By.xpath(".//div/a[@title='Telewizory LED - RODZAJ TELEWIZORA: LCD']")).click();
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@uid='47352167']")));
-        Assertions.assertThat(this.webDriver.findElements(By.xpath("//div[@uid='47352167']")).size()).isEqualTo(3);
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[contains(text(),'LCD')]")));
+        JavascriptExecutor js = (JavascriptExecutor) this.webDriver;
+        js.executeScript("window.scrollBy(0,250)", "");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'LCD')]")));
+        this.webDriver.findElement(By.xpath("//a[contains(text(),'LCD')]")).click();
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("[class='list-items']")));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("[class='offer-box']")));
+        Assertions.assertThat(this.webDriver.findElements(By.cssSelector("[class='offer-box']")).size()).isEqualTo(3);
+    }*/
+
+    /*@Test
+    public void selectMethod(){
+        this.webDriver.navigate().to("http://how2html.pl/select-html/");
+        new Select(this.webDriver.findElement(By.id("dessert"))).selectByIndex(2);
+    }*/
+
+    @Test
+    public void dropDownProduct(){
+        this.webDriver.navigate().to("https://www.samsung.com/pl/tvs/all-tvs/");
+        WebDriverWait wait = new WebDriverWait(this.webDriver, 10);
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("[class='menu js-pf-sortby-wrap selected']")));
+        this.webDriver.findElement(By.cssSelector("[class='menu js-pf-sortby-wrap selected']")).click();
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("[style='max-height: 288px; transition: max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;']")));
+        this.webDriver.findElements(By.cssSelector("[style='max-height: 288px; transition: max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;'] li")).get(2).click();
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".product-card-v2__item .product-card-v2__name-link")));
+        Assertions.assertThat(this.webDriver.findElements(By.cssSelector(".product-card-v2__item .product-card-v2__name-link")).get(0).getText()).contains("98” QLED Q950R");
     }
 
-    @After
+    /*@After
     public void tearDown() {
         this.webDriver.close();
         this.webDriver.quit();
-    }
+    }*/
 }
