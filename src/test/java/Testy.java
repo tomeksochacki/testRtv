@@ -21,7 +21,7 @@ public class Testy {
         this.webDriver = new ChromeDriver();
         this.webDriver.manage().window().maximize();
         this.webDriver.manage().deleteAllCookies();
-        this.webDriver.navigate().to("https://www.mediaexpert.pl/");
+        //this.webDriver.navigate().to("https://www.mediaexpert.pl/");
     }
 
     /*@Test
@@ -69,12 +69,15 @@ public class Testy {
     public void dropDownProduct(){
         this.webDriver.navigate().to("https://www.samsung.com/pl/tvs/all-tvs/");
         WebDriverWait wait = new WebDriverWait(this.webDriver, 10);
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("[class='menu js-pf-sortby-wrap selected']")));
-        this.webDriver.findElement(By.cssSelector("[class='menu js-pf-sortby-wrap selected']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='truste-consent-content']")));
+        this.webDriver.findElement(By.cssSelector("[id='truste-consent-button']")).click();
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("pf-finder-v2__filters-bar-select")));
+        this.webDriver.findElement(By.className("pf-finder-v2__filters-bar-select")).click();
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("[style='max-height: 288px; transition: max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;']")));
         this.webDriver.findElements(By.cssSelector("[style='max-height: 288px; transition: max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;'] li")).get(2).click();
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".product-card-v2__item .product-card-v2__name-link")));
         Assertions.assertThat(this.webDriver.findElements(By.cssSelector(".product-card-v2__item .product-card-v2__name-link")).get(0).getText()).contains("98” QLED Q950R");
+        System.out.println(this.webDriver.findElements(By.cssSelector(".product-card-v2__item .product-card-v2__name-link")).get(0).getText());
     }
 
     /*@After
