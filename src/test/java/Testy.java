@@ -88,7 +88,7 @@ public class Testy {
         Assertions.assertThat(this.webDriver.findElements(By.cssSelector(".product-card-v2__item .product-card-v2__name-link")).size()).isEqualTo(8);
     }*/
 
-    @Test
+    /*@Test
     public void testyDragAndDrop() {
         this.webDriver.navigate().to("https://marcojakob.github.io/dart-dnd/basic/");
         Actions actions = new Actions(this.webDriver);
@@ -104,6 +104,10 @@ public class Testy {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }*/
+
+    public void testDragAndDrop(){
+        this.webDriver.navigate().to("https://mobile.de/");
     }
 
     /*@After
