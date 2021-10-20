@@ -14,8 +14,11 @@ public class FastSearchElements {
     @FindBy(css = "#qsmilwrp .form-control.form-control--m.form-control--combobox.ui-combobox-hidden")
     private WebElement km;
 
-    @FindBy(id = "")
-    WebElement city;
+    @FindBy(id = "ambit-search-location")
+    private WebElement city;
+
+    @FindBy(id="qssub")
+    private WebElement searchButton;
 
     public WebElement getMark() {
         return mark;
@@ -39,5 +42,21 @@ public class FastSearchElements {
 
     public void setKm(WebElement km) {
         this.km = km;
+    }
+
+    public WebElement getCity() {
+        return city;
+    }
+
+    public void setCity(WebElement city) {
+        this.city = city;
+    }
+
+    public WebElement getSearchButton() {
+        return searchButton;
+    }
+
+    public void setSearchButton(WebElement searchButton) {
+        this.searchButton = searchButton;
     }
 }

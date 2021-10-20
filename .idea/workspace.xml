@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cb8bab17-64a7-4697-8280-02fc4549ea33" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/FastSearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/FastSearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/fragments/elements/FastSearchElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/fragments/elements/FastSearchElements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Testy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Testy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Testy.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
-  <component name="RunManager" selected="JUnit.Testy.testyDragAndDrop">
+  <component name="RunManager" selected="JUnit.Testy.testDragAndDrop">
     <configuration name="Testy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TEST23_W" />
       <option name="PACKAGE_NAME" value="" />
@@ -50,21 +53,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Testy.mediaExpertTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TEST23_W" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Testy" />
-      <option name="METHOD_NAME" value="mediaExpertTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Testy.selectMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TEST23_W" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Testy" />
       <option name="METHOD_NAME" value="selectMethod" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Testy.testDragAndDrop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TEST23_W" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Testy" />
+      <option name="METHOD_NAME" value="testDragAndDrop" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -82,11 +85,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Testy.testDragAndDrop" />
         <item itemvalue="JUnit.Testy.testyDragAndDrop" />
         <item itemvalue="JUnit.Testy.dropDownProduct" />
         <item itemvalue="JUnit.Testy.selectMethod" />
         <item itemvalue="JUnit.Testy" />
-        <item itemvalue="JUnit.Testy.mediaExpertTest" />
       </list>
     </recent_temporary>
   </component>
@@ -108,26 +111,26 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1634247273151" />
-    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1634680762620">
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1634766510354">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1634680762620" />
-    <state width="1557" height="188" key="GridCell.Tab.0.bottom" timestamp="1634594455214">
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1634766510354" />
+    <state width="1557" height="166" key="GridCell.Tab.0.bottom" timestamp="1634763009587">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="188" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1634594455214" />
-    <state width="1557" height="188" key="GridCell.Tab.0.center" timestamp="1634594455214">
+    <state width="1557" height="166" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1634763009587" />
+    <state width="1557" height="166" key="GridCell.Tab.0.center" timestamp="1634763009587">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="188" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1634594455214" />
-    <state width="1557" height="188" key="GridCell.Tab.0.left" timestamp="1634594455214">
+    <state width="1557" height="166" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1634763009587" />
+    <state width="1557" height="166" key="GridCell.Tab.0.left" timestamp="1634763009587">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="188" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1634594455214" />
-    <state width="1557" height="188" key="GridCell.Tab.0.right" timestamp="1634594455214">
+    <state width="1557" height="166" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1634763009587" />
+    <state width="1557" height="166" key="GridCell.Tab.0.right" timestamp="1634763009587">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="188" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1634594455214" />
+    <state width="1557" height="166" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1634763009587" />
     <state x="496" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1634670253375">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

@@ -3,6 +3,7 @@ import org.apache.commons.io.FileUtils;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +11,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.FastSearchPage;
+import pages.fragments.elements.PopupElemets;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,7 +32,8 @@ public class Testy {
         //this.webDriver.navigate().to("https://www.mediaexpert.pl/");
     }
 
-    /*@Test
+    @Test
+    @Ignore
     public void mediaExpertTest() {
         WebDriverWait wait = new WebDriverWait(webDriver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='spark-button is-primary is-default icon-left']")));
@@ -37,11 +41,11 @@ public class Testy {
         wait.until(ExpectedConditions.elementToBeClickable(By.linkText("TV, Audio i RTV")));
         this.webDriver.findElement(By.linkText("TV, Audio i RTV")).click();
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div/ul[@class='category']")));
-        *//*wait.until(ExpectedConditions.elementToBeClickable(By.className("icon close-icon icon-close")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.className("icon close-icon icon-close")));
         this.webDriver.switchTo()
                 .frame(this.webDriver.findElement(By.className("icon close-icon icon-close")));
         this.webDriver.findElement(By.className("icon close-icon icon-close")).click();
-        this.webDriver.switchTo().defaultContent();*//*
+        this.webDriver.switchTo().defaultContent();
         this.webDriver.findElement(By.xpath("//div/img[@alt='Telewizory']")).click();
         try {
             wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("[class='offer-box']")));
@@ -62,15 +66,17 @@ public class Testy {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("[class='list-items']")));
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("[class='offer-box']")));
         Assertions.assertThat(this.webDriver.findElements(By.cssSelector("[class='offer-box']")).size()).isEqualTo(3);
-    }*/
+    }
 
-   /* @Test
+    @Test
+    @Ignore
     public void selectMethod(){
         this.webDriver.navigate().to("http://how2html.pl/select-html/");
         new Select(this.webDriver.findElement(By.id("dessert"))).selectByIndex(2);
-    }*/
+    }
 
-    /*@Test
+    @Test
+    @Ignore
     public void dropDownProduct(){
         this.webDriver.navigate().to("https://www.samsung.com/pl/tvs/all-tvs/");
         WebDriverWait wait = new WebDriverWait(this.webDriver, 10);
@@ -86,9 +92,10 @@ public class Testy {
         //Assertions.assertThat(this.webDriver.findElements(By.cssSelector(".product-card-v2__item .product-card-v2__name-link")).get(0).getText()).contains("98” QLED Q950R");
         //System.out.println(this.webDriver.findElements(By.cssSelector(".product-card-v2__item .product-card-v2__name-link")).get(0).getText());
         Assertions.assertThat(this.webDriver.findElements(By.cssSelector(".product-card-v2__item .product-card-v2__name-link")).size()).isEqualTo(8);
-    }*/
+    }
 
-    /*@Test
+    @Test
+    @Ignore
     public void testyDragAndDrop() {
         this.webDriver.navigate().to("https://marcojakob.github.io/dart-dnd/basic/");
         Actions actions = new Actions(this.webDriver);
@@ -104,10 +111,18 @@ public class Testy {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
+    @Test
     public void testDragAndDrop(){
         this.webDriver.navigate().to("https://mobile.de/");
+        FastSearchPage fastSearchPage = new FastSearchPage(webDriver);
+        fastSearchPage.closePopupScreen()
+                        .selectMark("Audi")
+                        .selectModel("A4")
+                        .selectKm("100.000 km")
+                        .selectCity("Berlin")
+                        .search();
     }
 
     /*@After
