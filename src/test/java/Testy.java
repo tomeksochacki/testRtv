@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.FastSearchPage;
+import pages.SearchPage;
 import pages.fragments.elements.PopupElemets;
 
 import java.io.File;
@@ -114,6 +115,7 @@ public class Testy {
     }
 
     @Test
+    @Ignore
     public void testDragAndDrop(){
         this.webDriver.navigate().to("https://mobile.de/");
         FastSearchPage fastSearchPage = new FastSearchPage(webDriver);
@@ -123,6 +125,18 @@ public class Testy {
                         .selectKm("100.000 km")
                         .selectCity("Berlin")
                         .search();
+    }
+
+    @Test
+    public void getInformationAboutModel(){
+        this.webDriver.navigate().to("https://mobile.de/");
+        SearchPage searchPage = new SearchPage(webDriver);
+        searchPage.closePopUp()
+                .searchCarList()
+                .selectMark("Audi")
+                .selectModel("Audi A4");
+
+        Assertions.assertThat(searchPage.getMarkAndModel().contains("Audi A4 (Serie)"));
     }
 
     /*@After

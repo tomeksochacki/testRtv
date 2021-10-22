@@ -19,6 +19,17 @@ public class SearchMarkDetailsElements {
     @FindBy(css = ".CardInfo___2mHZKr .btn--link")
     private List<WebElement> modelList;
 
+    @FindBy(css = ".SeriesStage__Title___3n6MmJ")
+    private WebElement carNameAndSerie;
+
+    public WebElement getCarNameAndSerie() {
+        return carNameAndSerie;
+    }
+
+    public void setCarNameAndSerie(WebElement carNameAndSerie) {
+        this.carNameAndSerie = carNameAndSerie;
+    }
+
     public List<WebElement> getModelList() {
         return modelList;
     }

@@ -11,12 +11,13 @@ import pages.fragments.elements.PopupElemets;
 
 public class FastSearchPage {
 
-    WebDriver webDriver;
+    WebDriver driver;
     WebDriverWait webDriverWait;
     FastSearchElements fastSearchElements;
     PopupElemets popupElemets;
 
     public FastSearchPage(WebDriver driver) {
+        this.driver = driver;
         popupElemets = new PopupElemets();
         fastSearchElements = new FastSearchElements();
         PageFactory.initElements(driver, popupElemets);
